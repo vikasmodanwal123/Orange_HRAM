@@ -9,7 +9,7 @@ import testBase.BaseClass;
 
 public class TC_001_LoginPage extends BaseClass {
 	
-	@Test
+	@Test (groups = "Sanity")
 	public void login_verify()
 	{
 		logger.info("****This is Login Info*******");
@@ -17,7 +17,7 @@ public class TC_001_LoginPage extends BaseClass {
 		try {
 		LoginPage lp=new LoginPage(driver);
 		lp.username(p.getProperty("UserName"));
-		lp.password(p.getProperty("Password"));
+		lp.password(p.getProperty("Passwor"));
 		lp.login();
 		
 		logger.info("****This is after login success message****");

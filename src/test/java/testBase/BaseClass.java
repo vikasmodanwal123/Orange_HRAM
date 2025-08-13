@@ -1,13 +1,18 @@
 package testBase;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -22,7 +27,7 @@ public WebDriver driver;
 public Logger logger;
 public Properties p;
 	
-	@BeforeClass
+	@BeforeClass(groups = {"Regression","Sanity"})
 	@Parameters({"os","browser"})
 	//public void steup(String os, String br) throws IOException
 	public void steup() throws IOException
@@ -44,9 +49,14 @@ public Properties p;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(p.getProperty("URL"));
 		driver.manage().window().maximize();
+		
+		
 	}
 	
-	/*@AfterClass
+	
+	
+	
+	/*@AfterClass (groups = {"Regression","Sanity"})
 	public void teardown() 
 	{
 		driver.quit();
