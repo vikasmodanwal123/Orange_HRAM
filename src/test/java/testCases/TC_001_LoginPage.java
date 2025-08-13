@@ -17,7 +17,7 @@ public class TC_001_LoginPage extends BaseClass {
 		try {
 		LoginPage lp=new LoginPage(driver);
 		lp.username(p.getProperty("UserName"));
-		lp.password(p.getProperty("Passwor"));
+		lp.password(p.getProperty("Password"));
 		lp.login();
 		
 		logger.info("****This is after login success message****");

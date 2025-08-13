@@ -73,6 +73,7 @@ public class ExtentReportManager implements ITestListener {
 	    test.log(Status.INFO, "Failure reason: " + result.getThrowable().getMessage());
 
 	    // Get driver instance from BaseClass
+	   
 	    WebDriver driver = ((BaseClass) result.getInstance()).driver;
 
 	    ScreenShotCapture scc = new ScreenShotCapture(driver);
