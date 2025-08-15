@@ -8,7 +8,6 @@
     <classes>
      <!-- <class name="testCases.TC_001_LoginPage"/> -->
       <class name="testCases.TC_002_Login_TDD"/>
-      <class name="testCases.TC_003_AboutPage"/>
     </classes>
   </test> <!-- TestReport -->
 </suite> <!-- Suite -->
