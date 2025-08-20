@@ -25,5 +25,24 @@ public class DataProviders
 		return logindata;
 		
 	}
+	
+	@DataProvider(name="createuser")
+	public String [][] getUserData() throws IOException
+	{
+		String path=".\\testData\\Test_New_Data.xlsx";
+		ExcelUtility xlutil=new ExcelUtility(path);
+		int totalrows=xlutil.getRowCount("Sheet1");
+		int totalcols=xlutil.getCellCount("Sheet1",1);
+		String createuserdata[][]=new String [totalrows][totalcols];
+		for(int i=1; i<=totalrows; i++)
+		{
+			for (int j=0;j<totalcols; j++)
+			{
+				createuserdata[i-1][j]=xlutil.getCellData("Sheet1", i, j);
+			}
+		}
+		return createuserdata;
+	} 
+	
 
 }

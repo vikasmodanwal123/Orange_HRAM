@@ -12,8 +12,8 @@ public class LoginPage extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	
-	@FindBy(xpath = "//input[@placeholder='Username']") WebElement text_username;
-	@FindBy(xpath = "//input[@placeholder='Password']") WebElement text_passwrd;
+	@FindBy(xpath = "//input[@name='username']") WebElement text_username;
+	@FindBy(xpath = "//input[@name='password']") WebElement text_passwrd;
 	@FindBy(xpath = "//button[normalize-space()='Login']") WebElement btn_logn;
 	@FindBy(xpath = "//h6[normalize-space()='Dashboard']") WebElement text_success;
 	
