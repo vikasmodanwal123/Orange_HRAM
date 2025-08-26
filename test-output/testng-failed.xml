@@ -6,7 +6,8 @@
       <class name="testCases.Test_Case_05">
         <methods>
           <include name="steup"/>
-          <include name="logoutVerify"/>
+          <include name="logoutVerify" invocation-numbers="0 1 2 3"/>
+          <include name="doLogin"/>
         </methods>
       </class> <!-- testCases.Test_Case_05 -->
     </classes>

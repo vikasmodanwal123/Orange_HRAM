@@ -9,6 +9,7 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -61,6 +62,23 @@ public Properties p;
 	{
 		driver.quit();
 	} */
+	
+	public String randonString()
+	{
+		String GenaratedString=RandomStringUtils.randomAlphabetic(5);
+		return GenaratedString;
+	}
+	public String randonNumeric() {
+		 String GeneratedNumber=RandomStringUtils.randomNumeric(3);
+		 return GeneratedNumber;
+		
+	}
+	public String alphaNumeric()
+	{
+		String GenaratedString=RandomStringUtils.randomAlphabetic(5);
+		String GeneratedNumber=RandomStringUtils.randomNumeric(3);
+		return(GenaratedString+GeneratedNumber);
+	}
 
 
 }

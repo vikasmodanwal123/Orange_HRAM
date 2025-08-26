@@ -178,5 +178,11 @@
     <artifactId>extentreports</artifactId>
     <version>5.1.2</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.18.0</version>
+</dependency>
 </dependencies>
 </project>

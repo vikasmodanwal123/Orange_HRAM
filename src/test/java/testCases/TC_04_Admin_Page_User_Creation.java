@@ -1,15 +1,18 @@
 package testCases;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import io.restassured.response.Response;
 import pageObject.AddUser;
 import pageObject.LoginPage;
 import testBase.BaseClass;
+import utilities.DataProviders;
 
 public class TC_04_Admin_Page_User_Creation extends BaseClass{
-	@Test
-	public void adminverify()
+	@Test(dataProvider ="createuser", dataProviderClass =DataProviders.class )
+	public void adminverify(String empname, String Uname, String pwd, String cnfpass, String res)
 	{
 		logger.info("User LoggedIn verified");
 		try {
@@ -33,6 +36,9 @@ public class TC_04_Admin_Page_User_Creation extends BaseClass{
 		String admin_usertitle=newuser.adminValidate();
 		Assert.assertEquals(admin_usertitle, "Add User");
 		
+		//logger.info("With all blank try to create user");
+	    //newuser.withAllBlank();
+		
 		logger.info("Role selction verified");
 		//newuser.roleOpen();
 		newuser.roleSelect();
@@ -44,7 +50,7 @@ public class TC_04_Admin_Page_User_Creation extends BaseClass{
 		newuser.status_Selection();
 		
 		logger.info("Username text field verified");
-		newuser.userName("rajqa");
+		newuser.userName("rajqaaaa");
 		
 		logger.info("Pass Text field verified");
 		newuser.txtbxPaswrd("Rajqa123");
@@ -52,7 +58,40 @@ public class TC_04_Admin_Page_User_Creation extends BaseClass{
 		logger.info("Confirm text field verified");
 		newuser.cnfmPass("Rajqa123");
 		
-		newuser.btnSubmit();}
+		newuser.btnSubmit();
+		newuser.searchUser("rajqaaaa");
+		
+		boolean target1=newuser.isUserAdded();
+		
+		if(res.equalsIgnoreCase("valid"))
+		{
+			if(target1==true)
+			{
+				newuser.creatUser();
+				Assert.assertTrue(true);
+			}
+			else
+			{
+				Assert.assertTrue(false);
+			}
+		}
+		
+		if(res.equalsIgnoreCase("invalid"))
+		{
+			if(target1==true)
+			{
+				newuser.creatUser();
+				Assert.assertTrue(false);
+			}
+			
+			else
+			{
+				Assert.assertTrue(true);
+			}
+		}
+		
+		
+		}
 		catch(Exception e)
 		{
 			logger.error("this is failed");

@@ -58,7 +58,7 @@ public class TC_002_Login_TDD extends BaseClass {
 			  LogoutPage lg=new LogoutPage(driver);
 			  lg.drpdwnclick();
 			  lg.btnlogout();
-			  Assert.assertTrue(true);
+			  Assert.assertTrue(false);
 			}
 			else
 			{
