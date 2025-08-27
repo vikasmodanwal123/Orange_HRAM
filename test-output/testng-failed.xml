@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.Test_Case_05">
+      <class name="testCases.TC_002_Login_TDD">
         <methods>
+          <include name="login_verify_TDD" invocation-numbers="5"/>
           <include name="steup"/>
-          <include name="logoutVerify" invocation-numbers="0 1 2 3"/>
-          <include name="doLogin"/>
         </methods>
-      </class> <!-- testCases.Test_Case_05 -->
+      </class> <!-- testCases.TC_002_Login_TDD -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
